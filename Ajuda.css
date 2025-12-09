@@ -1,0 +1,162 @@
+/* === Fundo com degradê e logo === */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #2c3e50 0%, #1e3fa3 50%, #000000 100%);
+    color: #e0e0e0;
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  /* Logo como fundo decorativo */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 37%;
+    left: 50%;
+    width: 1500px;
+    height: 1500px;
+    transform: translate(-50%, -50%);
+    background-image: url('logo.png'); /* substitua pelo nome correto */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.35;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+
+  /* Container principal */
+  .container {
+    flex: 1;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Bloco de login/ajuda */
+  #Login {
+    background: #233044;
+    border: 4px solid #fbc02d;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 620px;
+    width: 100%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1;
+    opacity: 0.90;
+    
+  }
+  
+  #Ajuda {
+    font-size: 40px;
+    font-family: monospace;
+    color: #fbc02d;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  /* Botão voltar no topo */
+  #voltar {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 16px;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    background: linear-gradient(135deg, #fff176, #fbc02d);
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  #voltar:hover {
+    background-color: #1e3fa3;
+  }
+  
+  /* Formulário */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+  }
+  label {
+    font-size: 18px;
+    color: #fbc02d;
+    font-weight: bold;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  select,
+  textarea {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid #fbc02d;
+    background-color: #233044;
+    color: #ffffff;
+  }
+  textarea {
+    color: #ffffff;
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  /* Botão enviar */
+  #Entrar {
+    display: block;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #fff176, #fbc02d);
+    border-radius: 10px;
+    color: #0d1b2a;
+    font-size: 20px;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-family: monospace;
+    transition: background-color 0.3s ease-in-out;
+  }
+  #Entrar:hover {
+    background-color: #1e3fa3;
+    color: #fff;
+  }
+
+  /* Mensagem de confirmação oculta */
+.mensagem-confirmacao {
+  display: none;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #1c2433;
+  border: 2px solid #fbc02d;
+  border-radius: 10px;
+  color: #9be291;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Exibir quando alvo */
+#confirmacao:target {
+  display: block;
+}
+
+  
+
+  /* Responsividade */
+  @media (max-width: 768px) {
+    #CMAE { font-size: 50px; }
+    .Centro { font-size: 14px; }
+    #Login { max-width: 90%; padding: 20px; }
+    #Aluno { font-size: 28px; }
+    #Entrar { font-size: 18px; }
+  }
+  

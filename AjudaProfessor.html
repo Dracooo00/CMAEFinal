@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Ajuda - Sistema Escolar</title>
+  <link rel="stylesheet" href="Ajuda.css">
+  <link rel="icon" href="icon.png" type="icon">
+
+</head>
+<body>
+  <!-- Container principal -->
+  <div class="container">
+    <div id="Login">
+      <!-- Botão de voltar -->
+      <a href="Profprincipal.html" id="voltar">← Voltar</a>
+
+      <!-- Título -->
+      <h2 id="Ajuda">Ajuda</h2>
+
+      <!-- Formulário -->
+      <form action="#confirmacao" method="GET">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+        <label for="tipo">Sou:</label>
+        <select id="tipo" name="tipo" required>
+          <option value="">Selecione...</option>
+          <option value="aluno">Aluno</option>
+          <option value="professor">Professor</option>
+        </select>
+
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" placeholder="Descreva sua dúvida ou problema..." required></textarea>
+
+        <button id="Entrar" type="submit">Enviar</button>
+      </form>
+
+      <!-- Mensagem de confirmação -->
+      <div id="confirmacao" class="mensagem-confirmacao">
+        <p>✅ Seu formulário de ajuda foi enviado.<br>
+        Acompanhe pelo seu e-mail o andamento da solicitação.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

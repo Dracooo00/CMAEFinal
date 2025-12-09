@@ -1,0 +1,195 @@
+/* === Base & fundo CORRIGIDO === */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Altura FIXA completa */
+  overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #2c3e50 0%, #1e3fa3 30%, #0f2a7a 60%, #000000 100%);
+  background-attachment: fixed; /* Gradiente fixo, sem corte */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Distribui conteúdo verticalmente */
+  position: relative;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+/* === Chapéu de fundo === */
+#chapeu {
+  position: fixed; /* Mudança: fixed ao invés de absolute */
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(300px, 40vw, 480px); /* Responsivo */
+  height: auto;
+  opacity: 0.5    ;
+  z-index: -1;
+  filter: blur(2px) drop-shadow(0 0 20px rgba(0,0,0,0.2));
+}
+
+/* === Título principal RESPONSIVO === */
+#CMAE {
+  text-align: center;
+  font-size: clamp(80px, 18vw, 140px); /* NUNCA corta! */
+  font-weight: bold;
+  background: linear-gradient(90deg, #6e8dfd, #4876ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 0 20px rgba(0,0,0,0.3);
+  color: whitesmoke;
+  margin: 20px 0;
+  line-height: 1.1;
+}
+
+/* Subtítulo central RESPONSIVO */
+.Centro {
+  color: #ffffff;
+  text-align: center;
+  font-size: clamp(18px, 3vw, 24px);
+  letter-spacing: 2px;
+  font-style: italic;
+  margin: 10px 0;
+  max-width: 90%;
+}
+
+/* Imagem do personagem CORRIGIDA */
+#muleke {
+  width: clamp(200px, 25vw, 320px);
+  height: auto;
+  position: fixed;
+  right: clamp(10px, 5vw, 40px);
+  bottom: clamp(20px, 8vh, 50px);
+  filter: drop-shadow(0 0 15px rgba(0,0,0,0.5));
+  z-index: 1;
+}
+
+/* === BOTÕES 100% CLICÁVEIS === */
+.botao-gestao, .botao-aluno {
+  display: block;
+  width: clamp(320px, 45vw, 420px);
+  height: clamp(100px, 16vh, 130px);
+  margin: 20px auto;
+  background: #ffffff;
+  border: 3px solid #ffcc00;
+  border-radius: 18px;
+  text-decoration: none;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.botao-gestao:hover, .botao-aluno:hover {
+  background: #ffcc00;
+  border-color: #1e3fa3;
+  transform: scale(1.07);
+  box-shadow: 0 0 25px rgba(255,204,0,0.6);
+}
+
+/* TEXTO DENTRO DOS BOTÕES */
+.botao-gestao span, .botao-aluno span {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #1e3fa3;
+  font-size: clamp(28px, 6vw, 44px);
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  text-decoration: none;
+}
+
+.botao-gestao:hover span, .botao-aluno:hover span {
+  color: #1e3fa3;
+}
+
+/* === Rodapé PERFEITO === */
+#Direitos {
+  color: #ffffff;
+  font-size: clamp(12px, 2vw, 14px);
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  margin: 20px 0;
+  padding: 10px;
+}
+
+#ResumeBlock {
+  flex-grow: 1;
+  min-height: 100px;
+}
+
+#Resumo {
+  color: #aaaaaa;
+  font-size: clamp(10px, 1.5vw, 12px);
+  max-width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* === Botão de ajuda === */
+#TodoAjuda {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: linear-gradient(135deg, #fff176, #fbc02d);
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: monospace;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+}
+
+#TodoAjuda:hover {
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(255, 251, 0, 0.6);
+}
+
+/* === RESPONSIVO PERFEITO === */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  
+  #chapeu {
+    top: 20px;
+    width: 250px;
+  }
+  
+  #CMAE {
+    margin-top: 40px;
+  }
+  
+  #muleke {
+    width: 180px;
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #Resumo {
+    font-size: 10px;
+    padding: 10px;
+  }
+}

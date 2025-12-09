@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Professor - Turmas</title>
+  <link rel="stylesheet" href="Profprincipal.css"/>
+</head>
+<body>
+  <!-- Botão de Configurações -->
+  <div class="config-container">
+    <button id="btnConfig">⚙️</button>
+    <div id="menuConfig" class="menu-config">
+      <a href="index.html" id="btnLogout">Sair da conta</a>
+      <button id="btnPerfil">Editar perfil</button>
+    </div>
+  </div>
+
+  <!-- Janela Central Única -->
+  <div class="janela-central">
+    <!-- Turmas (tela inicial) -->
+    <main id="Turmas">
+      <div class="cabecalho-turmas">
+        <h1 id="TituloTurmas">Turmas</h1>
+        <div class="acoes-turmas">
+          <input type="text" id="BuscaTurmas" placeholder="Código da sala, Matéria, etc...">
+          <button id="btnNovaTurma">Nova Turma</button>
+        </div>
+      </div>
+
+      <section id="GridTurmas">
+        <div class="CardTurma" data-codigo="1DS-SEDUC" data-turno="Manhã" data-materia="Matemática">
+          <h2>1DS-SEDUC</h2>
+          <p>Manhã</p>
+          <p>Matemática</p>
+        </div>
+        <div class="CardTurma" data-codigo="2DS-SEDUC" data-turno="Tarde" data-materia="Português">
+          <h2>2DS-SEDUC</h2>
+          <p>Tarde</p>
+          <p>Português</p>
+        </div>
+        <div class="CardTurma" data-codigo="3DS-SEDUC" data-turno="Noite" data-materia="História">
+          <h2>3DS-SEDUC</h2>
+          <p>Noite</p>
+          <p>História</p>
+        </div>
+        <div class="CardTurma" data-codigo="4DS-SEDUC" data-turno="Manhã" data-materia="Geografia">
+          <h2>4DS-SEDUC</h2>
+          <p>Manhã</p>
+          <p>Geografia</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Perfil -->
+    <main id="Perfil" style="display:none;">
+      <div class="cabecalho-perfil">
+        <h1 id="TituloPerfil">Editar Perfil</h1>
+      </div>
+
+      <form id="FormPerfil">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" placeholder="Seu nome">
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" placeholder="Seu e-mail">
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" placeholder="Nova senha">
+
+        <div class="acoes-perfil">
+          <button type="submit" id="btnSalvar">Salvar</button>
+          <button type="button" id="btnVoltar">Voltar para Turmas</button>
+        </div>
+      </form>
+    </main>
+
+    <!-- Nova Turma -->
+    <main id="NovaTurma" style="display:none;">
+      <div class="cabecalho-nova">
+        <h1 id="TituloNovaTurma">Criar Nova Turma</h1>
+      </div>
+
+      <form id="FormNovaTurma">
+        <label for="codigo">Código da Sala:</label>
+        <input type="text" id="codigo" required>
+
+        <label for="turno">Turno:</label>
+        <input type="text" id="turno" required>
+
+        <label for="materia">Matéria:</label>
+        <input type="text" id="materia" required>
+
+        <div class="acoes-nova">
+          <button type="submit" id="btnCriar">Criar</button>
+          <button type="button" id="btnCancelar">Cancelar</button>
+        </div>
+      </form>
+    </main>
+
+    <!-- Janela da Turma (Chamada/Agenda) -->
+    <main id="JanelaTurma" style="display:none;">
+      <div class="turma-shell">
+        <nav class="sidebar">
+          <h1 id="SidebarTitulo">Turma</h1>
+          <a href="#" id="btnChamada" class="active">Chamada</a>
+          <a href="#" id="btnAgenda">Agenda</a>
+          <button id="btnVoltarTurmas" class="voltar-turmas">Voltar</button>
+        </nav>
+
+        <section class="content">
+          <div id="chamadaSection">
+            <h2>Chamada Escolar</h2>
+            <form id="formChamada">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Alunos</th>
+                    <th>R.A.</th>
+                    <th>Frequência</th>
+                  </tr>
+                </thead>
+                <tbody id="tbodyAlunos">
+                  <!-- preenchido dinamicamente -->
+                </tbody>
+              </table>
+              <button type="submit" id="btnEnviar">Enviar</button>
+            </form>
+          </div>
+
+          <div id="agendaSection" style="display:none;">
+            <h2>Agenda Escolar</h2>
+            <p id="agendaInfo">Eventos e compromissos da turma.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+  
+  <!-- Botão de ajuda -->
+    <a href="AjudaAluno.html" id="TodoAjuda">Ajuda!</a></body>
+
+  <script src="Profprincipal.js"></script>
+</body>
+</html>

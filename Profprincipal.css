@@ -1,0 +1,237 @@
+/* === Base & gradiente ESCURO === */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #2c3e50 0%, #1e3fa3 30%, #0f2a7a 70%, #000000 100%);
+  color: #e6e6e6;
+}
+
+/* === Botão de configurações === */
+.config-container { position: absolute; top: 20px; right: 20px; }
+#btnConfig {
+  background: #ffcc00; color: #1e3fa3; border: none; border-radius: 50%;
+  width: 45px; height: 45px; font-size: 20px; cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255,204,0,0.4);
+}
+#btnConfig:hover { 
+  background: #1e3fa3; color: #ffcc00; 
+  box-shadow: 0 6px 16px rgba(30,63,163,0.6);
+}
+.menu-config {
+  display: none; position: absolute; right: 0; margin-top: 10px; 
+  background: #233044; border: 2px solid #ffcc00;
+  border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5); padding: 10px;
+}
+.menu-config a, .menu-config button {
+  display: block; padding: 8px; text-decoration: none; color: #ffcc00; 
+  background: none; border: none; text-align: left; width: 100%; cursor: pointer;
+  font-weight: 500;
+}
+.menu-config a:hover, .menu-config button:hover { 
+  background: #ffcc00; color: #1e3fa3; border-radius: 4px; 
+}
+
+/* === Janela central === */
+.janela-central {
+  background: #233044; border-radius: 20px; box-shadow: 0 0 30px rgba(0,0,0,0.7);
+  padding: 24px; width: 1000px; max-height: 90vh; overflow-y: auto;
+
+}
+
+/* === Turmas === */
+.cabecalho-turmas { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+#TituloTurmas { 
+  font-size: 42px; font-family: monospace; color: #ffcc00; margin: 0; 
+  text-shadow: 0 0 10px rgba(255,204,0,0.5);
+}
+.acoes-turmas { display: flex; gap: 10px; align-items: center; }
+#BuscaTurmas {
+  width: 300px; padding: 12px; font-size: 18px; border-radius: 10px; 
+  border: 3px solid #ffcc00; background-color: #1c2433; color: #e6e6e6;
+}
+#BuscaTurmas::placeholder { color: #a0a0a0; }
+#btnNovaTurma {
+  padding: 10px 20px; border: none; border-radius: 8px; font-weight: bold; 
+  background: #ffcc00; color: #1e3fa3; cursor: pointer;
+  box-shadow: 0 4px 8px rgba(255,204,0,0.3);
+}
+#btnNovaTurma:hover { 
+  background: #1e3fa3; color: #ffcc00; 
+  box-shadow: 0 6px 12px rgba(30,63,163,0.5);
+}
+
+#GridTurmas { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-top: 10px; }
+.CardTurma {
+  background: #1c2433; color: #ffcc00; border: 3px solid #ffcc00; 
+  border-radius: 15px; padding: 20px; text-align: center; transition: 0.3s;
+  cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+.CardTurma:hover {
+  background: #ffcc00; color: #1e3fa3; border: 3px solid #1e3fa3; 
+  transform: scale(1.05); box-shadow: 0 8px 20px rgba(255,204,0,0.4);
+}
+.CardTurma h2 { font-family: monospace; font-size: 1.4rem; margin-bottom: 10px; }
+.CardTurma p { margin: 5px 0; }
+
+/* === Perfil === */
+#TituloPerfil { 
+  font-size: 42px; font-family: monospace; color: #ffcc00; 
+  margin-bottom: 20px; text-shadow: 0 0 10px rgba(255,204,0,0.5);
+}
+#FormPerfil { display: flex; flex-direction: column; }
+#FormPerfil label { 
+  margin-top: 10px; font-weight: bold; color: #ffcc00; 
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+#FormPerfil input { 
+  padding: 10px; border: 2px solid #ffcc00; border-radius: 8px; 
+  margin-top: 5px; background: #1c2433; color: #e6e6e6;
+}
+#FormPerfil input::placeholder { color: #a0a0a0; }
+.acoes-perfil { display: flex; justify-content: space-between; margin-top: 20px; }
+#btnSalvar, #btnVoltar {
+  padding: 10px 20px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;
+}
+#btnSalvar { background: #ffcc00; color: #1e3fa3; }
+#btnSalvar:hover { background: #1e3fa3; color: #ffcc00; }
+#btnVoltar { background: #1c2433; color: #ffcc00; border: 2px solid #ffcc00; }
+#btnVoltar:hover { background: #ffcc00; color: #1e3fa3; }
+
+/* === Nova Turma === */
+#TituloNovaTurma { 
+  font-size: 42px; font-family: monospace; color: #ffcc00; 
+  margin-bottom: 20px; text-shadow: 0 0 10px rgba(255,204,0,0.5);
+}
+#FormNovaTurma { display: flex; flex-direction: column; }
+#FormNovaTurma label { 
+  margin-top: 10px; font-weight: bold; color: #ffcc00; 
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+#FormNovaTurma input { 
+  padding: 10px; border: 2px solid #ffcc00; border-radius: 8px; 
+  margin-top: 5px; background: #1c2433; color: #e6e6e6;
+}
+#FormNovaTurma input::placeholder { color: #a0a0a0; }
+.acoes-nova { display: flex; justify-content: space-between; margin-top: 20px; }
+#btnCriar, #btnCancelar {
+  padding: 10px 20px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;
+}
+#btnCriar { background: #ffcc00; color: #1e3fa3; }
+#btnCriar:hover { background: #1e3fa3; color: #ffcc00; }
+#btnCancelar { background: #1c2433; color: #ffcc00; border: 2px solid #ffcc00; }
+#btnCancelar:hover { background: #ffcc00; color: #1e3fa3; }
+
+/* === Janela da Turma === */
+.turma-shell { 
+  display: flex; background: #1c2433; border-radius: 12px; 
+  box-shadow: 0 0 20px rgba(0,0,0,0.5); overflow: hidden; 
+  width: 100%; min-height: 70vh; border: 2px solid #ffcc00;
+}
+nav.sidebar { 
+  background: #0f2a7a; color: #ffcc00; width: 220px; padding: 20px; 
+  box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+}
+nav.sidebar h1 { font-size: 22px; margin-bottom: 24px; color: #ffcc00; }
+nav.sidebar a {
+  display: block; color: #ffcc00; font-size: 18px; margin: 10px 0; 
+  text-decoration: none; padding: 8px; border-radius: 6px;
+}
+nav.sidebar a.active, nav.sidebar a:hover { 
+  background: #ffcc00; color: #0f2a7a; font-weight: bold; 
+}
+nav.sidebar .voltar-turmas {
+  margin-top: 20px; width: 100%; padding: 10px; border: none; 
+  border-radius: 6px; background: #ffcc00; color: #0f2a7a; 
+  font-weight: bold; cursor: pointer;
+}
+nav.sidebar .voltar-turmas:hover { background: #f0b800; }
+
+section.content { flex-grow: 1; padding: 30px; overflow-y: auto; background: #233044; }
+section.content h2 { color: #ffcc00; font-size: 28px; margin-top: 0; }
+
+/* Tabela chamada */
+table { width: 100%; border-collapse: separate; border-spacing: 0 10px; }
+thead th {
+  background-color: #0f2a7a; color: #ffcc00; padding: 12px; 
+  border-radius: 6px; text-align: left; font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+tbody tr { 
+  background: #1c2433; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.4); 
+}
+tbody td { padding: 10px; color: #e6e6e6; }
+
+/* Frequência */
+.frequencia {
+  display: grid; grid-template-columns: auto auto auto 1fr auto; align-items: center; gap: 8px;
+}
+.frequencia .lock { font-size: 16px; opacity: 0; }
+.pf-btn {
+  border: 2px solid #ffcc00; color: #ffcc00; background: #1c2433;
+  border-radius: 6px; width: 36px; height: 32px; font-weight: bold; cursor: pointer;
+}
+.pf-btn:hover { background: #ffcc00; color: #1e3fa3; border-color: #1e3fa3; }
+.pf-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.percentual { justify-self: start; font-weight: bold; font-size: 14px; }
+.percentual.verde { color: #9be291; text-shadow: 0 0 5px rgba(155,226,145,0.5); }
+.percentual.amarelo { color: #ffcc00; text-shadow: 0 0 5px rgba(255,204,0,0.5); }
+.percentual.vermelho { color: #ff7b7b; text-shadow: 0 0 5px rgba(255,123,123,0.5); }
+
+.btn-a {
+  width: 36px; height: 36px; border-radius: 50%; border: none;
+  background: #666; color: #fff; font-weight: bold; cursor: pointer;
+}
+.btn-a:hover { transform: scale(1.03); }
+.btn-a.ativo { background: #ffcc00; color: #1e3fa3; }
+
+tr.bloqueado .frequencia .lock { opacity: 1; }
+tr.bloqueado .pf-btn { opacity: 0.5; pointer-events: none; }
+tr.bloqueado .btn-a { background: #ffcc00; color: #1e3fa3; }
+
+/* === Logo decorativa ao fundo === */
+body::before {
+  content: ""; position: fixed; top: 50%; left: 50%; width: 800px; height: 800px;
+  transform: translate(-50%, -50%); background-image: url('logo.png');
+  background-size: contain; background-repeat: no-repeat; background-position: center;
+  opacity: 0.03; z-index: 0; pointer-events: none;
+}
+
+/* === Botão de ajuda === */
+#TodoAjuda {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: linear-gradient(135deg, #fff176, #fbc02d);
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: monospace;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1;
+  font-weight: bold;
+  text-decoration: none; /* remove sublinhado */
+
+  display: inline-block; /* garante aparência de botão */
+}
+#TodoAjuda:hover {
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(255, 251, 0, 0.6);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .janela-central { width: 95%; padding: 16px; }
+  #GridTurmas { grid-template-columns: 1fr; }
+  .turma-shell { flex-direction: column; }
+  nav.sidebar { width: 100%; }
+}

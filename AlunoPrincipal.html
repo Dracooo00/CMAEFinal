@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aluno - Painel</title>
+  <link rel="stylesheet" href="AlunoPrincipal.css"/>
+  <link rel="icon" href="icon.png" type="icon">
+</head>
+<body>
+  <!-- Botão de configuração superior -->
+  <details class="config-container">
+    <summary id="btnConfig">⚙️</summary>
+    <div class="menu-config">
+      <a href="#perfilModal">Editar Perfil</a>
+      <a href="index.html">Sair da Conta</a>
+    </div>
+  </details>
+
+  <!-- Modal de edição de perfil -->
+  <div id="perfilModal" class="modal">
+    <div class="modal-content">
+      <a href="#freq" class="close">&times;</a>
+      <h2>Editar Perfil</h2>
+      <form>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" value="Aluno Exemplo">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="aluno@escola.com">
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" placeholder="********">
+
+        <button type="submit">Salvar Alterações</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Janela central -->
+  <div class="janela-central">
+    <!-- Abas controladas por :target -->
+    <div class="tabs">
+      <a class="tab" href="#freq">Frequência</a>
+      <a class="tab" href="#mat">Matérias</a>
+      <a class="tab" href="#comp">Compensação</a>
+    </div>
+
+    <!-- Conteúdo: Frequência -->
+    <div class="conteudo" id="freq">
+      <h1>Porcentagem de Frequência</h1>
+      <div class="freq-grid">
+        <div class="freq-percent-card">
+          <p class="freq-percent">48%</p>
+          <p class="freq-label">Sua frequência atual</p>
+        </div>
+        <div class="alert-card">
+          <h2>Alertas</h2>
+          <ul class="alert-list">
+            <li><span class="alert-icon"></span> Você falta muito de Sexta-Feiras</li>
+            <li><span class="alert-icon"></span> Sua frequência está abaixo da média</li>
+          </ul>
+        </div>
+        <div class="abs-card">
+          <h2>Lista de Faltas</h2>
+          <div class="abs-list">
+            <div class="abs-item"><div class="abs-date">02/09</div><div class="abs-weekday">Terça-Feira</div><div class="abs-count">6 aulas</div></div>
+            <div class="abs-item"><div class="abs-date">29/08</div><div class="abs-weekday">Sexta-Feira</div><div class="abs-count">6 aulas</div></div>
+            <div class="abs-item"><div class="abs-date">22/08</div><div class="abs-weekday">Sexta-Feira</div><div class="abs-count">6 aulas</div></div>
+            <div class="abs-item"><div class="abs-date">15/08</div><div class="abs-weekday">Sexta-Feira</div><div class="abs-count">6 aulas</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conteúdo: Matérias -->
+    <div class="conteudo" id="mat">
+      <h1>Boletim por Matéria</h1>
+      <div class="materias-list">
+        <div class="materia-card"><h3>Biologia</h3><p>Faltas: 0</p><p class="presenca verde">Presença: 100%</p></div>
+        <div class="materia-card"><h3>Educação Financeira</h3><p>Faltas: 6</p><p class="presenca vermelho">Presença: 50%</p></div>
+        <!-- demais matérias... -->
+      </div>
+    </div>
+
+    <!-- Conteúdo: Compensação -->
+    <div class="conteudo" id="comp">
+      <h1>Compensação</h1>
+      <div class="CardAluno"><p>Atividade de recuperação em Matemática</p></div>
+      <div class="CardAluno"><p>Trabalho extra em História</p></div>
+      <div class="CardAluno"><p>Participação em feira de ciências</p></div>
+    </div>
+  </div>
+
+    <!-- Botão de ajuda -->
+    <a href="AjudaAluno.html" id="TodoAjuda">Ajuda!</a></body>
+</body>
+</html>
